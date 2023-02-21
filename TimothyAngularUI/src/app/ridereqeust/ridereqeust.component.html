@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #rideRequestForm="ngForm" (ngSubmit)="rideRequest(rideRequestForm)">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>RideRequestId</mat-label>
+                <input matInput 
+                ngModel
+                name="rideRequestId"
+                id="rideRequestId"
+                placeholder="RideRequestId">
+                <mat-hint>RideRequestId</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>RequestName</mat-label>
+                <input matInput 
+                ngModel
+                name="requestName"
+                id="requestName"
+                placeholder="RequestName">
+                <mat-hint>RequestName</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Location</mat-label>
+                <input matInput 
+                ngModel
+                name="location"
+                id="location"
+                placeholder="Location">
+                <mat-hint>Location</mat-hint>
+            </mat-form-field>
+
+            <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
+
+        </form>
+    </div>
+</div>
