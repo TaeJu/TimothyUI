@@ -20,6 +20,7 @@ export class RidereqeustComponent implements OnInit {
     this.rideProducerService.requestRide(rideRequestForm.value).subscribe(
       (resp) => {
         console.log(resp);
+        window.alert('success');
         this.router.navigate(['/']);
       },
       (err) => {

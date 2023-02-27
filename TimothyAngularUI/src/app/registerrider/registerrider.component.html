@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #registerRiderRequestForm="ngForm" (ngSubmit)="registerRiderRequest(registerRiderRequestForm)">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Name</mat-label>
+                <input matInput 
+                ngModel
+                name="name"
+                id="name"
+                placeholder="Name">
+                <mat-hint>Name</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>PreferredLocation</mat-label>
+                <input matInput 
+                ngModel
+                name="preferredLocation"
+                id="preferredLocation"
+                placeholder="PreferredLocation">
+                <mat-hint>PreferredLocation</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>AvailableSpot</mat-label>
+                <input matInput 
+                ngModel
+                name="availableSpot"
+                id="availableSpot"
+                placeholder="AvailableSpot">
+                <mat-hint>AvailableSpot</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>CurrentFillSpot</mat-label>
+                <input matInput 
+                ngModel
+                name="currentFillSpot"
+                id="currentFillSpot"
+                placeholder="CurrentFillSpot">
+                <mat-hint>CurrentFillSpot</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>RiderStatus</mat-label>
+                <input matInput 
+                ngModel
+                name="riderStatus"
+                id="riderStatus"
+                placeholder="RiderStatus">
+                <mat-hint>RiderStatus</mat-hint>
+            </mat-form-field>
+
+            <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
+
+        </form>
+    </div>
+</div>

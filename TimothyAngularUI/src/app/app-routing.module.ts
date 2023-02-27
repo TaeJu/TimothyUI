@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterriderComponent } from './registerrider/registerrider.component';
 import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './_auth/auth.guard';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'user', component:UserComponent, canActivate:[AuthGuard], data:{roles:['User']}},
   {path: 'login', component:LoginComponent},
   {path: 'forbidden', component:ForbiddenComponent},
-  {path: 'rideRequest', component:RidereqeustComponent}
+  {path: 'rideRequest', component:RidereqeustComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
+  {path: 'registerRider', component:RegisterriderComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}}
 ];
 
 @NgModule({

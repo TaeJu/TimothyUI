@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterriderComponent } from './registerrider/registerrider.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HeaderComponent,
     ForbiddenComponent,
-    RidereqeustComponent
+    RidereqeustComponent,
+    RegisterriderComponent
   ],
   imports: [
     BrowserModule,
