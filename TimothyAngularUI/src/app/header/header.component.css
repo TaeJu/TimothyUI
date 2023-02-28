@@ -8,3 +8,9 @@ button {
     margin-right: 5px;
     margin-left: 5px;
 }
+
+.my-class{
+    width: 100px!important;
+    height: 50px!important;
+    min-width: unset!important;
+}

@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterriderComponent } from './registerrider/registerrider.component';
+import { RegisteruserComponent } from './registeruser/registeruser.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RegisterriderComponent } from './registerrider/registerrider.component'
     HeaderComponent,
     ForbiddenComponent,
     RidereqeustComponent,
-    RegisterriderComponent
+    RegisterriderComponent,
+    RegisteruserComponent
   ],
   imports: [
     BrowserModule,

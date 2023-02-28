@@ -32,6 +32,10 @@ export class UserService {
     });
   }
 
+  public registerUser(registerForm) {
+    return this.httpclient.post(this.PATH_OF_API_USER_SERVICE + "/registerNewUser", registerForm, { headers: this.requestHeader });
+  }
+
   public roleMatch(allowedRoles) : boolean {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
