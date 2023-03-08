@@ -23,6 +23,8 @@ import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterriderComponent } from './registerrider/registerrider.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
+import { MatTableModule } from '@angular/material/table';
+import { RiderBoardComponent } from './rider-board/rider-board.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
     ForbiddenComponent,
     RidereqeustComponent,
     RegisterriderComponent,
-    RegisteruserComponent
+    RegisteruserComponent,
+    RiderBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [
     AuthGuard,

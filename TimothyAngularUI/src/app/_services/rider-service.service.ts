@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Rider } from '../_model/rider.model';
 import { UserAuthService } from './user-auth.service';
 
@@ -19,5 +20,9 @@ export class RiderServiceService {
   
   public registerRider(riderRequestData) {
     return this.httpclient.post<Rider>(this.PATH_OF_API_RIDE_SERVICE + "/registerRider", riderRequestData, { headers: this.requestHeader});
+  }
+
+  public getAllRider(): Observable<Rider[]> {
+    return this.httpclient.get<Rider[]>(this.PATH_OF_API_RIDE_SERVICE + "/getAllRider")
   }
 }
