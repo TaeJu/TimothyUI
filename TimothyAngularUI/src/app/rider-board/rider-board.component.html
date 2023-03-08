@@ -1,0 +1,27 @@
+<table mat-table [dataSource]="riderDetails" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="RiderId">
+      <th mat-header-cell *matHeaderCellDef> RiderId </th>
+      <td mat-cell *matCellDef="let element"> {{element.riderId}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="RiderName">
+      <th mat-header-cell *matHeaderCellDef> RiderName </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Location">
+      <th mat-header-cell *matHeaderCellDef> Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.preferredLocation}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="CurrentSpot">
+      <th mat-header-cell *matHeaderCellDef> CurrentSpot </th>
+      <td mat-cell *matCellDef="let element"> {{element.currentFillSpot}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  

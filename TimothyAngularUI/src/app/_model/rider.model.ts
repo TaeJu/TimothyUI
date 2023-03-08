@@ -1,3 +1,4 @@
+import { RideRequest } from "./riderequest.model";
 
 export interface Rider {
     riderId: number;
@@ -7,4 +8,5 @@ export interface Rider {
     currentFillSpot: number;
     riderStatus: boolean;
     lastUpdated: Date;
+    requests: RideRequest;
 }
