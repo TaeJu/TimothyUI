@@ -1,59 +1,87 @@
 <div class="container mt-5">
-    <div class="card" style="padding: 20px;">
-        <form #registerRiderRequestForm="ngForm" (ngSubmit)="registerRiderRequest(registerRiderRequestForm)">
+    <div class="card p-2">
+        <div class="row">
+            <div class="col-6">
+                <div style="height: auto;">
+                    <form #registerRiderRequestForm="ngForm" (ngSubmit)="registerRiderRequest(registerRiderRequestForm)">
 
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Name</mat-label>
-                <input matInput 
-                ngModel
-                name="name"
-                id="name"
-                placeholder="Name">
-                <mat-hint>Name</mat-hint>
-            </mat-form-field>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Name</mat-label>
+                            <input matInput 
+                            ngModel
+                            name="name"
+                            id="name"
+                            placeholder="Name">
+                            <mat-hint>Name</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>PreferredLocation</mat-label>
+                            <input matInput 
+                            ngModel
+                            name="preferredLocation"
+                            id="preferredLocation"
+                            placeholder="PreferredLocation">
+                            <mat-hint>PreferredLocation</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>AvailableSpot</mat-label>
+                            <input matInput 
+                            ngModel
+                            name="availableSpot"
+                            id="availableSpot"
+                            placeholder="AvailableSpot">
+                            <mat-hint>AvailableSpot</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>CurrentFillSpot</mat-label>
+                            <input matInput 
+                            ngModel
+                            name="currentFillSpot"
+                            id="currentFillSpot"
+                            placeholder="CurrentFillSpot">
+                            <mat-hint>CurrentFillSpot</mat-hint>
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>RiderStatus</mat-label>
+                            <input matInput 
+                            ngModel
+                            name="riderStatus"
+                            id="riderStatus"
+                            placeholder="RiderStatus">
+                            <mat-hint>RiderStatus</mat-hint>
+                        </mat-form-field>
+            
+                        <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
+            
+                    </form>
+                </div>
+            </div>
 
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>PreferredLocation</mat-label>
-                <input matInput 
-                ngModel
-                name="preferredLocation"
-                id="preferredLocation"
-                placeholder="PreferredLocation">
-                <mat-hint>PreferredLocation</mat-hint>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>AvailableSpot</mat-label>
-                <input matInput 
-                ngModel
-                name="availableSpot"
-                id="availableSpot"
-                placeholder="AvailableSpot">
-                <mat-hint>AvailableSpot</mat-hint>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>CurrentFillSpot</mat-label>
-                <input matInput 
-                ngModel
-                name="currentFillSpot"
-                id="currentFillSpot"
-                placeholder="CurrentFillSpot">
-                <mat-hint>CurrentFillSpot</mat-hint>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>RiderStatus</mat-label>
-                <input matInput 
-                ngModel
-                name="riderStatus"
-                id="riderStatus"
-                placeholder="RiderStatus">
-                <mat-hint>RiderStatus</mat-hint>
-            </mat-form-field>
-
-            <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
-
-        </form>
+            <div class="col-6" style="height: fit-content;">
+                <div class="">
+                    <input type="file" value="select" #selectFile
+                    (change)="onFileSelected($event)"
+                    >
+                </div>
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="1" rowHeigh="1:1">
+                            <mat-grid-tile>
+                                <div style="position: relative">
+                                    <span class="btn-remove-image" (click)="removeImage()">x</span>
+                                        <img [src]=fileHandle.url width="200px" height="200px" >
+                                </div>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </div>

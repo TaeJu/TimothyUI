@@ -25,6 +25,7 @@ import { RegisterriderComponent } from './registerrider/registerrider.component'
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { MatTableModule } from '@angular/material/table';
 import { RiderBoardComponent } from './rider-board/rider-board.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { RiderBoardComponent } from './rider-board/rider-board.component';
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule
   ],
   providers: [
     AuthGuard,
