@@ -2,13 +2,13 @@
     <div class="card p-2">
         <div class="row">
             <div class="col-6">
-                <div style="height: auto;">
+                <div class="content-1">
                     <form #registerRiderRequestForm="ngForm" (ngSubmit)="registerRiderRequest(registerRiderRequestForm)">
 
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>Name</mat-label>
                             <input matInput 
-                            ngModel
+                            [(ngModel)]="rider.name"
                             name="name"
                             id="name"
                             placeholder="Name">
@@ -18,7 +18,7 @@
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>PreferredLocation</mat-label>
                             <input matInput 
-                            ngModel
+                            [(ngModel)]="rider.preferredLocation"
                             name="preferredLocation"
                             id="preferredLocation"
                             placeholder="PreferredLocation">
@@ -28,7 +28,7 @@
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>AvailableSpot</mat-label>
                             <input matInput 
-                            ngModel
+                            [(ngModel)]="rider.availableSpot"
                             name="availableSpot"
                             id="availableSpot"
                             placeholder="AvailableSpot">
@@ -38,7 +38,7 @@
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>CurrentFillSpot</mat-label>
                             <input matInput 
-                            ngModel
+                            [(ngModel)]="rider.currentFillSpot"
                             name="currentFillSpot"
                             id="currentFillSpot"
                             placeholder="CurrentFillSpot">
@@ -48,22 +48,38 @@
                         <mat-form-field appearance="outline" class="w-100">
                             <mat-label>RiderStatus</mat-label>
                             <input matInput 
-                            ngModel
+                            [(ngModel)]="rider.riderStatus"
                             name="riderStatus"
                             id="riderStatus"
                             placeholder="RiderStatus">
                             <mat-hint>RiderStatus</mat-hint>
                         </mat-form-field>
-            
-                        <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
+                        
+                        <div align="end">
+                            <button class="w-100" type="submit" *ngIf="isNewRider" mat-raised-button color="primary">Submit Request</button>
+                            <button class="w-100" type="submit" *ngIf="!isNewRider" mat-raised-button color="primary">Update Request</button>
+                        </div>
             
                     </form>
                 </div>
             </div>
 
-            <div class="col-6" style="height: fit-content;">
-                <div class="">
+            <div class="col-6">
+                <div class="content-2">
+                    <div class="dropzone"
+                    appDrag
+                    (files) = "fileDropped($event)"
+                    >
+                        <div class="text-wrapper">
+                            <div class="centered">
+                                Drag and drop your file or 
+                                <a (click)="selectFile.click()" class="browse-button">browse</a>
+                                a file
+                            </div>  
+                        </div>
+                    </div>
                     <input type="file" value="select" #selectFile
+                    style="display: none;"
                     (change)="onFileSelected($event)"
                     >
                 </div>
@@ -72,8 +88,8 @@
                         <mat-grid-list cols="1" rowHeigh="1:1">
                             <mat-grid-tile>
                                 <div style="position: relative">
-                                    <span class="btn-remove-image" (click)="removeImage()">x</span>
-                                        <img [src]=fileHandle.url width="200px" height="200px" >
+                                    <span class="btn-remove-image" *ngIf="!isFileEmpty" (click)="removeImage()">x</span>
+                                        <img [src]=fileHandle.url *ngIf="!isFileEmpty" width="200px" height="200px" >
                                 </div>
                             </mat-grid-tile>
                         </mat-grid-list>

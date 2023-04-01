@@ -7,7 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterriderComponent } from './registerrider/registerrider.component';
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { RiderBoardComponent } from './rider-board/rider-board.component';
+import { RiderResolveService } from './rider-resolve.service';
 import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
+import { UserBoardComponent } from './user-board/user-board.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './_auth/auth.guard';
 
@@ -18,9 +20,14 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'forbidden', component:ForbiddenComponent},
   {path: 'rideRequest', component:RidereqeustComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
-  {path: 'registerRider', component:RegisterriderComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
+  {path: 'registerRider', component:RegisterriderComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']},
+    resolve: {
+      rider: RiderResolveService
+    }
+  },
   {path: 'riderBoard', component:RiderBoardComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
-  {path: 'registerUser', component:RegisteruserComponent}
+  {path: 'registerUser', component:RegisteruserComponent},
+  {path: 'uploadBoard', component:UserBoardComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}}
 ];
 
 @NgModule({
