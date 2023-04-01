@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FileHandle } from '../_model/file-handle.model';
 import { Rider } from '../_model/rider.model';
 import { RiderServiceService } from '../_services/rider-service.service';
@@ -12,14 +12,34 @@ import { RiderServiceService } from '../_services/rider-service.service';
   styleUrls: ['./registerrider.component.css']
 })
 export class RegisterriderComponent implements OnInit {
- 
+  isNewRider = true;
+  isFileEmpty = true;
+
+  rider: Rider = {
+    riderId: null as any,
+    name: "",
+    preferredLocation: "",
+    availableSpot: 0,
+    currentFillSpot: 0,
+    riderStatus: null as any,
+    imageModel: null as any
+  }
+
   fileHandle!: FileHandle;
 
   constructor(private rideService: RiderServiceService,
     private router: Router,
-    private sanitizer: DomSanitizer) { }
+    private sanitizer: DomSanitizer,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.rider = this.activatedRoute.snapshot.data['rider'];
+    this.fileHandle = this.rider.imageModel;
+    
+    if (this.rider && this.rider.riderId) {
+      this.isNewRider = false;
+      this.isFileEmpty = false;
+    }
   }
 
   registerRiderRequest(registerRiderRequestForm:NgForm) {
@@ -43,6 +63,7 @@ export class RegisterriderComponent implements OnInit {
     const formData = new FormData();
 
     const rider: Rider = {
+      riderId: null as any,
       name: registerForm.value.name,
       preferredLocation: registerForm.value.preferredLocation,
       availableSpot: registerForm.value.availableSpot,
@@ -77,6 +98,7 @@ export class RegisterriderComponent implements OnInit {
       }
 
       this.fileHandle = fileHandle;
+      this.isFileEmpty = false;
     }
 
     console.log(this.fileHandle);
@@ -85,5 +107,9 @@ export class RegisterriderComponent implements OnInit {
   removeImage() {
     this.fileHandle = {} as FileHandle;
     window.location.reload();
+  }
+
+  fileDropped(fileHandle: FileHandle) {
+    this.fileHandle = fileHandle;
   }
 }

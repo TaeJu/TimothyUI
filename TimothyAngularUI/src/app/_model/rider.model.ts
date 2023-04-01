@@ -2,7 +2,7 @@ import { FileHandle } from "./file-handle.model";
 import { RideRequest } from "./riderequest.model";
 
 export interface Rider {
-    //riderId: number;
+    riderId: number;
     name: string;
     preferredLocation: string;
     availableSpot: number;

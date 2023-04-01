@@ -26,6 +26,11 @@ import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { MatTableModule } from '@angular/material/table';
 import { RiderBoardComponent } from './rider-board/rider-board.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { DragDirective } from './drag.directive';
+import {MatIconModule} from '@angular/material/icon';
+import { ShowRiderImageDialogComponent } from './show-rider-image-dialog/show-rider-image-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserBoardComponent } from './user-board/user-board.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
     RidereqeustComponent,
     RegisterriderComponent,
     RegisteruserComponent,
-    RiderBoardComponent
+    RiderBoardComponent,
+    DragDirective,
+    ShowRiderImageDialogComponent,
+    UserBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
     AuthGuard,

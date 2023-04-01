@@ -18,11 +18,15 @@ export class RiderServiceService {
     { "No-Auth":"True" }
   );
   
-  public registerRider(riderRequestData) {
+  public registerRider(riderRequestData: FormData) {
     return this.httpclient.post<Rider>(this.PATH_OF_API_RIDE_SERVICE + "/registerRider", riderRequestData, { headers: this.requestHeader});
   }
 
   public getAllRider(): Observable<Rider[]> {
     return this.httpclient.get<Rider[]>(this.PATH_OF_API_RIDE_SERVICE + "/getAllRider")
+  }
+
+  public getRiderDetailsById(riderId) {
+    return this.httpclient.get<Rider>(this.PATH_OF_API_RIDE_SERVICE + "/getRiderDetailsById/" + riderId)
   }
 }

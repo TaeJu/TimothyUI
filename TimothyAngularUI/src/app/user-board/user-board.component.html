@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #uploadBoardForm="ngForm" (ngSubmit)="uploadBoard(uploadBoardForm)">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Board Writer</mat-label>
+                <input matInput 
+                ngModel
+                name="boardWriter"
+                id="boardWriter"
+                placeholder="BoardWriter">
+                <mat-hint>Board Writer</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Board Pass</mat-label>
+                <input matInput 
+                ngModel
+                name="boardPass"
+                id="boardPass"
+                placeholder="Board Pass">
+                <mat-hint>Board Pass</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Board Title</mat-label>
+                <input matInput 
+                ngModel
+                name="boardTitle"
+                id="boardTitle"
+                placeholder="Board Title">
+                <mat-hint>UserLastName</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Board Contents</mat-label>
+                <input 
+                matInput 
+                ngModel
+                name="boardContents"
+                id="boardContents"
+                placeholder="BardContents">
+                <mat-hint>BoardContents</mat-hint>
+            </mat-form-field>
+
+            <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>
+
+        </form>
+    </div>
+</div>
