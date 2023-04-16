@@ -31,6 +31,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { ShowRiderImageDialogComponent } from './show-rider-image-dialog/show-rider-image-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserBoardComponent } from './user-board/user-board.component';
+import { BoardDetailsComponent } from './board-details/board-details.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { UserBoardComponent } from './user-board/user-board.component';
     RiderBoardComponent,
     DragDirective,
     ShowRiderImageDialogComponent,
-    UserBoardComponent
+    UserBoardComponent,
+    BoardDetailsComponent
   ],
   imports: [
     BrowserModule,

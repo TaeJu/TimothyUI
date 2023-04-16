@@ -34,13 +34,18 @@
 
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Board Contents</mat-label>
-                <input 
+                <textarea
                 matInput 
                 ngModel
                 name="boardContents"
                 id="boardContents"
-                placeholder="BardContents">
+                placeholder="BardContents"
+                cols="30"
+                rows="10"
+                >
+                </textarea>
                 <mat-hint>BoardContents</mat-hint>
+
             </mat-form-field>
 
             <button class="w-100" type="submit" mat-raised-button color="primary">Submit Request</button>

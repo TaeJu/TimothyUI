@@ -1,5 +1,24 @@
 <div class="container mt-5">
-   <div class="card text-center" style="padding: 20px">
-        <h1>This is Home Page</h1>
+   <mat-grid-list cols="4" rowHeight="1:1" gutterSize="10">
+      <mat-grid-tile *ngFor="let b of boardDetails">
+         <div class="row">
+            <div class="mt-3">
+               <p><b>{{b.boardTitle}}</b></p>
+            </div>
+            <div class="mt-3">
+               <p>{{b.boardWriter}}</p> 
+            </div>
+            <div class="mt-3">
+               <p style="white-space: inherit; height: 50px; width: 288px; overflow: hidden; text-overflow: ellipsis;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni rerum veritatis at accusantium quod nobis aliquam harum provident cum sapiente quis sit excepturi, doloremque quisquam atque labore incidunt laborum impedit?</p> 
+            </div>
+            <div class="center">
+               <button type="button" mat-raised-button color="warn" (click)="showBoardDetilas(b.boardId)">View Details</button>
+            </div>
+         </div>
+      </mat-grid-tile>
+   </mat-grid-list>
+
+   <div class="text-center mt-5" *ngIf="showLoadButton">
+      <button type="button" mat-raised-button color="primary" (click)="loadMoreProduct()"> Load More </button>
    </div>
 </div>
