@@ -12,6 +12,8 @@ import { RidereqeustComponent } from './ridereqeust/ridereqeust.component';
 import { UserBoardComponent } from './user-board/user-board.component';
 import { UserComponent } from './user/user.component';
 import { AuthGuard } from './_auth/auth.guard';
+import { BoardDetailsComponent } from './board-details/board-details.component';
+import { BoardResolveService } from './board-resolve.service';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -27,7 +29,12 @@ const routes: Routes = [
   },
   {path: 'riderBoard', component:RiderBoardComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
   {path: 'registerUser', component:RegisteruserComponent},
-  {path: 'uploadBoard', component:UserBoardComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}}
+  {path: 'uploadBoard', component:UserBoardComponent, canActivate:[AuthGuard], data:{roles:['Admin', 'User']}},
+  {path: 'boardDetails', component:BoardDetailsComponent,  canActivate:[AuthGuard], data:{roles:['Admin', 'User']},
+    resolve: {
+      board: BoardResolveService
+    }
+  }
 ];
 
 @NgModule({

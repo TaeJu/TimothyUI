@@ -1,0 +1,19 @@
+mat-grid-tile {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+mat-grid-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
